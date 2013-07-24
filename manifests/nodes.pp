@@ -1,5 +1,5 @@
 node 'userv1.myhome.internal' {
-	include nginx
+	include openbsd
 }
 
 node 'fire1' {

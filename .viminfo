@@ -15,9 +15,9 @@ $vim
 
 # Command Line History (newest to oldest):
 :wq
+:q
 :q!
 :s/.oh-my-zsh/vim/g
-:q
 
 # Search String History (newest to oldest):
 ? .oh-my-zsh
@@ -35,15 +35,18 @@ $vim
 	 
 
 # File marks:
-'0  18  10  ~/.git/COMMIT_EDITMSG
-'1  3  4  ~/.gitignore
-'2  19  48  ~/.git/COMMIT_EDITMSG
-'3  25  5  ~/.git/COMMIT_EDITMSG
-'4  10  0  ~/modules/openbsd/manifests/init.pp
-'5  1  0  ~/modules/openbsd/files/vimrc
-'6  1  1  ~/.gitignore
+'0  2  0  ~/modules/openbsd/manifests/init.pp
+'1  18  10  ~/.git/COMMIT_EDITMSG
+'2  3  4  ~/.gitignore
+'3  19  48  ~/.git/COMMIT_EDITMSG
+'4  25  5  ~/.git/COMMIT_EDITMSG
+'5  10  0  ~/modules/openbsd/manifests/init.pp
+'6  1  0  ~/modules/openbsd/files/vimrc
+'7  1  1  ~/.gitignore
 
 # Jumplist (newest first):
+-'  2  0  ~/modules/openbsd/manifests/init.pp
+-'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  18  10  ~/.git/COMMIT_EDITMSG
 -'  1  0  ~/.git/COMMIT_EDITMSG
 -'  3  4  ~/.gitignore
@@ -53,82 +56,56 @@ $vim
 -'  2  0  ~/.git/COMMIT_EDITMSG
 -'  10  0  ~/modules/openbsd/manifests/init.pp
 -'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  24  5  ~/.git/COMMIT_EDITMSG
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  3  4  ~/.gitignore
 -'  1  0  ~/.gitignore
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  23  5  ~/.git/COMMIT_EDITMSG
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
--'  1  0  ~/modules/openbsd/manifests/init.pp
 -'  1  0  ~/modules/openbsd/files/vimrc
 -'  1  0  ~/modules/openbsd/files/vimrc
--'  10  0  ~/modules/openbsd/manifests/init.pp
--'  8  4  ~/modules/openbsd/manifests/init.pp
+-'  18  10  ~/.git/COMMIT_EDITMSG
+-'  1  0  ~/.git/COMMIT_EDITMSG
+-'  3  4  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  19  48  ~/.git/COMMIT_EDITMSG
+-'  25  5  ~/.git/COMMIT_EDITMSG
+-'  2  0  ~/.git/COMMIT_EDITMSG
+-'  1  0  ~/modules/openbsd/files/vimrc
+-'  1  0  ~/modules/openbsd/files/vimrc
 
 # History of marks within files (newest to oldest):
+
+> ~/modules/openbsd/manifests/init.pp
+	"	2	0
+	^	1	15
+	.	1	15
+	+	8	19
+	+	1	15
 
 > ~/.git/COMMIT_EDITMSG
 	"	18	10
@@ -143,9 +120,3 @@ $vim
 	^	3	5
 	.	3	4
 	+	3	4
-
-> ~/modules/openbsd/manifests/init.pp
-	"	10	0
-	^	8	175
-	.	8	64
-	+	8	64
