@@ -1,6 +1,34 @@
 set nocompatible
 set t_Co=256
-set background=dark
+set background=light
+
+"Vundle Experiment automatic
+" Setting up Vundle -> The VIM Pluging handler
+	let iCanHazVundle=1
+	let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+	if !filereadable(vundle_readme)
+		echo "Installing Vundle..."
+		echo ""
+		silent !mkdir -p ~/.vim/bundle
+		silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+		let iCanHazVundle=0
+	endif
+	set rtp+=~/.vim/bundle/vundle/
+	call vundle#rc()
+	Bundle 'gmarik/vundle'
+	"My bundles here
+	Bundle 'altercation/vim-colors-solarized'
+	Bundle 'L9'
+	Bundle 'FuzzyFinder'
+	Bundle 'tpope/vim-fugitive'
+	Bundle 'Lokaltog/vim-easymotion'
+	Bundle	'scrooloose/nerdtree'
+	if iCanHazVundle == 0
+		echo "Vundle is installed, Installing Vundle, Please ignore keymap error messages"
+			echo ""
+			:BundleInstall
+		endif
+"Setting up Vundle -> The vim plugin bundler end
 
 filetype on
 filetype indent on
@@ -29,7 +57,7 @@ set incsearch
 set ignorecase
 set smartcase
 set ai
-"set smartindent
+set smartindent
 set foldenable
 
 "By folkes
@@ -46,17 +74,21 @@ set hidden
 set history=700
 
 "This will remove the Auto-indetation while copy and Paste
-set paste
+"set paste
+"Enables :Paste to just do what you want to paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
+
+
+nmap <F3> :NERDTreeToggle<CR>
 nmap ,rc :e $MYVIMRC<cr>
 nmap <space> :
 
-autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd bufwritepost .vimrc source $MYVIMRC 
 
 
-" Vundle Pluging Experiment
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-"Vundle Plugins
-Bundle 'scrooloose/nerdtree'
+"Trial from Jackinsella's site See what happens
+nnoremap / /\v
+vnoremap / /\v
