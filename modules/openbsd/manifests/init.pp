@@ -5,7 +5,7 @@ class openbsd {
 }
 	file { '/root/.vimrc'	:	source => 'puppet:///modules/openbsd/vimrc', owner => 'root',			}
 	file { '/root/.oh-my-zsh'	: source => 'puppet:///modules/openbsd/oh-my-zsh', owner => 'root', ensure => directory, recurse => true, force => true, mode => 0644,  }
-	file{ '/root/.vim'	: source => 'puppet:///modules/openbsd/files/vim', owner => 'root',  ensure => directory, recurse => true, force => true, mode => 0644,  }
+	file{ '/root/.vim'	: source => 'puppet:///modules/openbsd/vim', owner => 'root',  ensure => directory, recurse => true, force => true, mode => 0644,  }
 
 
 	user {	'art':
