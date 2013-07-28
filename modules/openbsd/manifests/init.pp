@@ -17,6 +17,11 @@ class openbsd {
 		}
 }
 ### Initial Packets
-	package { 'pftop':
-		ensure	=> installed,
-	}
+#
+	package { [ 'unzip',
+							'unrar'
+	
+	]:
+	ensure => installed,
+		
+		}
