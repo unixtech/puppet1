@@ -23,5 +23,5 @@ class openbsd {
 	
 	]:
 	ensure => installed,
-		
+	notify => "packages $package has been installed on fire1"	
 		}
