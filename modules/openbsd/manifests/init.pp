@@ -17,6 +17,6 @@ class openbsd {
 		}
 }
 ### Initial Packets
-	package { 'pfstat':
+	package { 'pftop':
 		ensure	=> installed,
 	}
