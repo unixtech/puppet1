@@ -1,5 +1,5 @@
 node 'userv1.myhome.internal' {
-	include openbsd
+	include dotf
 }
 
 node 'fire1' {
