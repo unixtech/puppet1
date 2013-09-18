@@ -7,9 +7,12 @@ class ssh {
     source => 'puppet:///modules/ssh/sshd_config',
     notify => Service['ssh'],
     owner => 'root',
-    group  => 'root',
-
+    if $::osfamily == 'OpenBSD'{
+    group  => 'wheel',
+    else {
+      group => 'root',
+    }
     
-    
+    }
     }
 }
