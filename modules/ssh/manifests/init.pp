@@ -3,16 +3,19 @@ class ssh {
     ensure => 'running',
     }
 
+
+$OSFAM = $::osfamily? {
+  OpenBSD => 'wheel',
+  default => 'root',
+}
+
   file { '/etc/ssh/sshd_config':
     source => 'puppet:///modules/ssh/sshd_config',
     notify => Service['ssh'],
     owner => 'root',
-    if $::osfamily == 'OpenBSD'{
-    group  => 'wheel',
-    else {
-      group => 'root',
-    }
+    group  => $OSFAM,
+
     
-    }
+    
     }
 }
