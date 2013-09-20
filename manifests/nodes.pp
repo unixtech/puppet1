@@ -1,8 +1,5 @@
 node 'userv1.myhome.internal' {
-	include sudo
-	include exec
-	include ssh
-	include template
+	include regex
 }
 
 node 'fire1' {
