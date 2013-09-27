@@ -1,6 +1,5 @@
 node 'userv1.myhome.internal' {
 	include regex1
-	include users
 }
 
 node 'fire1' {
@@ -12,4 +11,8 @@ node 'fire1' {
 
 node 'fire2' inherits 'fire1'{
 
+}
+
+node 'bsd1' {
+  include dotf
 }

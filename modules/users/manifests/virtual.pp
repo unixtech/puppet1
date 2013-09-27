@@ -5,7 +5,7 @@ class users::virtual {
   notify {'User abhay,test is present':}
   
   define user_dotfile($user) {
-    $source = regsubst($name, "^/home/${user}/.(.*)$", "puppet:///modules/users/${user}-\\1")
+    $source = regsubst($name, "^/home/${user}/.(.*)$", "puppet:///modules/dotf/${user}-\\1")
     file { $name:
       source => $source,
       owner => $user,
@@ -34,14 +34,14 @@ class users::virtual {
   }
 
   if $dotfile {
-    $filepath = regsubst(dotfile, '^(.*)$', "/home/${name}/.\\0", 'G')
+    $filepath = regsubst($dotfile,'^(.*)$',"/home/${name}/.\\0", 'G')
     user_dotfile { $filepath:
       user => $name,
     }
   }
 }
 
-@ssh_user { 'jamil':
+@ssh_user { 'abhay':
     key => 'xyz',
-    dotfile => ['zshrc', 'vimrc'],
+    dotfile => ['zshrc', 'vimrc', 'tmux.conf'],
   }

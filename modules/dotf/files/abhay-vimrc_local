@@ -1,0 +1,160 @@
+set nocompatible
+set t_Co=256
+set background=dark
+set guifont=Monaco:h10
+
+"Vundle Experiment automatic
+" Setting up Vundle -> The VIM Pluging handler
+""	let iCanHazVundle=1
+"	let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+"	if !filereadable(vundle_readme)
+"		echo "Installing Vundle..."
+"		echo ""
+"		silent !mkdir -p ~/.vim/bundle
+"		silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+"		let iCanHazVundle=0
+"	endif
+"	set rtp+=~/.vim/bundle/vundle/
+"	call vundle#rc()
+"	Bundle 'gmarik/vundle'
+"	"My bundles here
+"	Bundle 'altercation/vim-colors-solarized'
+"	Bundle 'L9'
+"	Bundle 'FuzzyFinder'
+"	Bundle 'tpope/vim-fugitive'
+"	Bundle 'Lokaltog/vim-easymotion'
+"	Bundle	'scrooloose/nerdtree'
+"	if iCanHazVundle == 0
+"		echo "Vundle is installed, Installing Vundle, Please ignore keymap error messages"
+"			echo ""
+"			:BundleInstall
+"		endif
+""Setting up Vundle -> The vim plugin bundler end
+
+filetype on
+filetype indent on
+filetype plugin on
+
+set laststatus=2
+""set statusline=\ %f%m%r%h%w\ %=%({%{&ff}\|%{(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\")}%k\|%Y}%)\ %([%l,%v][%p%%]\ %)
+"set statusline=%<%f%m\ \[%{&ff}:%{&fenc}:%Y]\ %{getcwd()}\ \ \[%{strftime('%Y/%b/%d\ %a\ %I:%M\ %p')}\]\ %=\ Line:%l\/%L\ Column:%c%V\ %P
+"set statusline=%<%f%m\ \ %{getcwd()}\ \ \ %=\ Line:%l\/%L\ Column:%c%V\ %P
+
+"set backspace=2
+syntax on
+"syntax off
+
+
+let g:solarized_termcolors=256
+color zenburn
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+set showmatch
+set incsearch
+set nohlsearch
+"set number
+"set cursorline
+""set cursorcolumn
+set ignorecase
+set smartcase
+set ai
+set smartindent
+set foldenable
+set mousehide
+set wrap
+set linespace=3
+
+
+"By folkes
+set wc=<TAB>
+set wmnu
+set wildmode=list:longest,list:full
+set ruler
+set ru
+set splitbelow
+set gdefault
+set noedcompatible
+
+set hidden
+set history=700
+
+"This will remove the Auto-indetation while copy and Paste
+"set paste
+"Enables :Paste to just do what you want to paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+nnoremap <F5> :UndotreeToggle<cr>
+
+nmap <F3> :NERDTreeToggle<CR>
+nmap ,rc :e $MYVIMRC<cr>
+nmap ,rl :e ~/.vimrc.local<cr>
+nmap <space> :
+
+autocmd bufwritepost .vimrc.local source $MYVIMRC 
+autocmd bufwritepost .gvimrc.local source $MYVIMRC 
+
+"Template should be completed
+autocmd BufNewFile * silent! Or $VIMHOME/templates/%:e.tpl
+
+"Auto change the directory to that of file in Buffer
+autocmd BufEnter * cd %:p:h
+
+"Trial from Jackinsella's site See what happens
+nnoremap / /\v
+vnoremap / /\v
+"statico Rules that we have to start
+nmap j gj
+nmap k gk
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+"My CTRLP Trial Is wq
+nmap ; :CtrlPBuffer<CR>
+"Copy should be easier then this.
+noremap <leader>y "+y
+noremap <leader>Y "+Y
+noremap <leader>p "+p
+
+
+
+
+" Use Some of this settings for CTRLP
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+"let g:ctrlp_custom_ignore = '\v\~$|\.(o|swo|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_dotfiles = 0
+let g:ctrlp_switch_buffer = 0
+let g:indent_guides_enable_on_vim_startup = 0
+let nerdtreeshowhidden = 1
+
+"Disable my pluging
+"UnBundle 'neocomplcache'
+""UnBundle 'airline'
+"UnBundle 'bling/vim-airline'
+
+set nospell
+let g:neocomplcache_disable_auto_complete = 1 
+
+"Nettuts PART 4
+set autowrite
+"Set map leader than \
+let mapleader = ","
+set timeoutlen=500
+
+
+"set statusline=%<%f%m\ \ %{getcwd()}\ \ \ %=\ Line:%l\/%L\ Column:%c%V\ %P
+
+" Try and set up abriviation
+iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+"Customize VIM airline
+"function! AirlineInit()
+  "let g:airline_section_a = 
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_z = airline#section#create_right(['%l/%L', '%c'])
+let g:airline_powerline_fonts = 1
