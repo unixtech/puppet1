@@ -1,5 +1,6 @@
 node 'userv1.myhome.internal' {
-	include regex
+	include regex1
+	include users
 }
 
 node 'fire1' {
