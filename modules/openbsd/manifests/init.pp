@@ -15,7 +15,6 @@ class openbsd {
 		managehome	=> true,
 		password	=> 'art',
 		}
-}
 ### Initial Packets
 #
 	package { [ 'unzip',
@@ -28,3 +27,4 @@ class openbsd {
 	ensure => installed,
 	notify => "packages $package has been installed on fire1"	
 		}
+}
