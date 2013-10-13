@@ -15,7 +15,11 @@ $OSFAM = $::osfamily? {
     owner => 'root',
     group  => $OSFAM,
 
-    
-    
     }
+  file { '/etc/ssh/ssh_config':
+    source => 'puppet:///modules/ssh/ssh_config',
+    notify => Service['ssh'],
+    owner => 'root',
+    group  => $OSFAM,
+  }
 }

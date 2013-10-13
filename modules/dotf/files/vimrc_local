@@ -1,35 +1,8 @@
 set nocompatible
 set t_Co=256
 set background=dark
-set guifont=Monaco:h10
+"set guifont=Monaco:h10
 
-"Vundle Experiment automatic
-" Setting up Vundle -> The VIM Pluging handler
-""	let iCanHazVundle=1
-"	let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-"	if !filereadable(vundle_readme)
-"		echo "Installing Vundle..."
-"		echo ""
-"		silent !mkdir -p ~/.vim/bundle
-"		silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-"		let iCanHazVundle=0
-"	endif
-"	set rtp+=~/.vim/bundle/vundle/
-"	call vundle#rc()
-"	Bundle 'gmarik/vundle'
-"	"My bundles here
-"	Bundle 'altercation/vim-colors-solarized'
-"	Bundle 'L9'
-"	Bundle 'FuzzyFinder'
-"	Bundle 'tpope/vim-fugitive'
-"	Bundle 'Lokaltog/vim-easymotion'
-"	Bundle	'scrooloose/nerdtree'
-"	if iCanHazVundle == 0
-"		echo "Vundle is installed, Installing Vundle, Please ignore keymap error messages"
-"			echo ""
-"			:BundleInstall
-"		endif
-""Setting up Vundle -> The vim plugin bundler end
 
 filetype on
 filetype indent on
@@ -45,13 +18,14 @@ syntax on
 "syntax off
 
 
-let g:solarized_termcolors=256
-color zenburn
+"let g:solarized_termcolors=256
+color wombat256
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
+"Don't show tab and other characters as signs
+set nolist
 set showmatch
 set incsearch
 set nohlsearch
@@ -66,7 +40,7 @@ set foldenable
 set mousehide
 set wrap
 set linespace=3
-
+set go+=a
 
 "By folkes
 set wc=<TAB>
@@ -94,8 +68,8 @@ nmap ,rc :e $MYVIMRC<cr>
 nmap ,rl :e ~/.vimrc.local<cr>
 nmap <space> :
 
-autocmd bufwritepost .vimrc.local source $MYVIMRC 
-autocmd bufwritepost .gvimrc.local source $MYVIMRC 
+autocmd bufwritepost .vimrc.local source $MYVIMRC
+autocmd bufwritepost .gvimrc.local source $MYVIMRC
 
 "Template should be completed
 autocmd BufNewFile * silent! Or $VIMHOME/templates/%:e.tpl
@@ -113,13 +87,16 @@ nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 "My CTRLP Trial Is wq
 nmap ; :CtrlPBuffer<CR>
+
 "Copy should be easier then this.
-noremap <leader>y "+y
-noremap <leader>Y "+Y
-noremap <leader>p "+p
-
-
-
+"vnoremap <leader>y "+yy
+"noremap <leader>Y "+Y
+"noremap <leader>p "+p
+"vnoremap <C-c> "*yy
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 " Use Some of this settings for CTRLP
 let g:ctrlp_map = '<Leader>t'
@@ -146,11 +123,13 @@ set autowrite
 let mapleader = ","
 set timeoutlen=500
 
-
 "set statusline=%<%f%m\ \ %{getcwd()}\ \ \ %=\ Line:%l\/%L\ Column:%c%V\ %P
 
 " Try and set up abriviation
 iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+iab lorpython def main:
+
+
 
 "Customize VIM airline
 "function! AirlineInit()
@@ -158,3 +137,48 @@ iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_z = airline#section#create_right(['%l/%L', '%c'])
 let g:airline_powerline_fonts = 1
+
+"Steve Francia
+set cursorline                  " highlight current line
+"hi CursorColumn cuibg=lightgrey
+"hi CursorLine cterm=NONE  ctermfg=lightblue
+hi CursorLine cterm=Bold ctermfg=19 ctermbg=15
+"highlight Visual ctermfg=bg ctermbg=fg
+
+set nonu
+set scrolljump=5
+set scrolloff=3
+
+" Easier moving in tabs and windows
+     map <C-J> <C-W>j<C-W>_
+     map <C-K> <C-W>k<C-W>_
+     map <C-L> <C-W>l<C-W>_
+     map <C-H> <C-W>h<C-W>_
+     map <C-K> <C-W>k<C-W>_
+
+"Latest vimrc from "amix.dk/vim/vimrc.html"
+set magic
+"Good for faster execution of macros
+set lazyredraw
+"How many tenths of a second to blink when matching brackets
+set mat=2
+
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
+"Remember info about open buffers on close 
+set viminfo^=%
+
+"Crypt Stronger
+set cryptmethod=blowfish

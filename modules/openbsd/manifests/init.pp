@@ -19,7 +19,10 @@ class openbsd {
 ### Initial Packets
 #
 	package { [ 'unzip',
-							'unrar'
+							'unrar',
+              'openvpn',
+              'pftop',
+              'pfstat'
 	
 	]:
 	ensure => installed,
