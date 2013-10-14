@@ -64,20 +64,20 @@ class openbsd {
 
 ### Initial Packets
 #
-	package { [ 'unzip',
-							'unrar',
-              'openvpn',
-              'pftop',
-              'pfstat',
-              'unbound',
-              'nsd3',
-              'squid',
-              'vsftpd'
+	#package { [ 'unzip',
+							#'unrar',
+              #'openvpn',
+              #'pftop',
+              #'pfstat',
+              #'unbound',
+              #'nsd3',
+              #'squid',
+              #'vsftpd'
 	
-	]:
-	ensure => installed,
-	#notify => "packages $package has been installed on fire1"	
-		}
+	#]:
+	#ensure => installed,
+	##notify => "packages $package has been installed on fire1"	
+		#}
 
 
 		exec {'Check the diskspace and Report if back tryit':
