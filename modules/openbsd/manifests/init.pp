@@ -5,9 +5,13 @@ class openbsd {
     default => 'root'
   }
 
-  $HOSTN = $::hostname? {
+  $HOSTPF = $::hostname? {
     fire1 => 'puppet:///modules/openbsd/pf_fire1.conf',
     fire2 => 'puppet:///modules/openbsd/pf_fire2.conf'
+  }
+  $HOSTRC = $::hostname? {
+    fire1 => 'puppet:///modules/openbsd/rc_fire1.conf',
+    fire2 => 'puppet:///modules/openbsd/rc_fire2.conf'
   }
 	#file { '/root/.zshrc' :
 		#source => 'puppet:///modules/openbsd/zshrc_openbsd',
@@ -30,12 +34,24 @@ class openbsd {
     }
 
   file{ '/etc/pf.conf':
-    source => $HOSTN,
+    source => $HOSTPF,
     owner => 'root',
     group => $OSFAM,
     ensure => 'present'
     }
 
+  file{ '/etc/rc.conf.local':
+    source => $HOSTRC,
+    owner => 'root',
+    group => $OSFAM,
+    ensure => 'present'
+    }
+  file{ '/etc/rc.conf.local':
+    source => $HOSTRC,
+    owner => 'root',
+    group => $OSFAM,
+    ensure => 'present'
+    }
 	user {	'art':
 		ensure	=> present,
 		comment	=> 'Art Vandelay',
@@ -43,6 +59,15 @@ class openbsd {
 		managehome	=> true,
 		password	=> 'art',
 		}
+
+#Define Cron job to restart pflogd every other day
+  cron{'Restart pflogd day':
+    command => '/etc/rc.d/pflogd restart',
+    hour => 23,
+    user => root
+    
+    }
+
 ### Initial Packets
 #
 	package { [ 'unzip',
