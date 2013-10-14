@@ -46,12 +46,6 @@ class openbsd {
     group => $OSFAM,
     ensure => 'present'
     }
-  file{ '/etc/rc.conf.local':
-    source => $HOSTRC,
-    owner => 'root',
-    group => $OSFAM,
-    ensure => 'present'
-    }
 	user {	'art':
 		ensure	=> present,
 		comment	=> 'Art Vandelay',
