@@ -37,7 +37,16 @@ class openbsd {
     source => $HOSTPF,
     owner => 'root',
     group => $OSFAM,
-    ensure => 'present'
+    ensure => 'present',
+    #notify => Service['pf']
+    }
+
+  file{ '/var/unbound/etc/unbound.conf':
+    source => 'puppet:///modules/openbsd/unbound.conf',
+    owner => 'root',
+    group => $OSFAM,
+    ensure => 'present',
+    notify => Service['unbound']
     }
 
   file{ '/etc/rc.conf.local':
@@ -58,6 +67,7 @@ class openbsd {
   cron{'Restart pflogd day':
     command => '/etc/rc.d/pflogd restart',
     hour => 23,
+    minute => 30,
     user => root
     
     }
@@ -72,7 +82,10 @@ class openbsd {
               'unbound',
               'nsd3',
               'squid',
-              'vsftpd'
+              'vsftpd',
+              'unbound',
+              'rsync'
+
 	
   ]:
   ensure => installed,
