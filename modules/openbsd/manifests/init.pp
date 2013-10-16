@@ -46,7 +46,7 @@ class openbsd {
     owner => 'root',
     group => $OSFAM,
     ensure => 'present',
-    notify => Service['unbound']
+    #notify => Service['unbound']
     }
 
   file{ '/etc/rc.conf.local':
