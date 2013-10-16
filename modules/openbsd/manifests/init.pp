@@ -83,7 +83,6 @@ class openbsd {
               'nsd3',
               'squid',
               'vsftpd',
-              'unbound',
               'rsync'
 
 	
